@@ -337,6 +337,51 @@
           ]
         },
         {
+          "name": "ResetButton",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "OnlyOnceCondition",
+              "type": "OnlyOnceConditionForObject::OnlyOnceCondition"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.02500000037252903,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "Launch button.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           "additive": false,
           "destroyWhenNoParticles": true,
           "emitterAngleA": 0,
@@ -379,110 +424,9 @@
           "variables": [],
           "effects": [],
           "behaviors": []
-        },
-        {
-          "name": "ResetButton",
-          "tags": "",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": true,
-                  "timeBetweenFrames": 0.02500000037252903,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "Launch button.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
         }
       ],
       "events": [
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "GlobalVariableAsBoolean"
-              },
-              "parameters": [
-                "真偽値",
-                "True"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "OnlyOnceConditionForObject::LogMessageToConsole"
-              },
-              "parameters": [
-                "",
-                "\"Condition is True!\"",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "BuiltinCommonInstructions::Or"
-              },
-              "parameters": [],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": [],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "DebuggerTools::ConsoleLog"
-              },
-              "parameters": [
-                "\"True!\"",
-                "\"info\"",
-                "\"MyMessage\""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
         {
           "disabled": false,
           "folded": false,
@@ -540,18 +484,6 @@
                     "CheckRoundButton",
                     "OnceBehavior",
                     "\"First click\"",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "OnlyOnceConditionForObject::LogMessageToConsole"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Condition of Object is True!\"",
                     ""
                   ],
                   "subInstructions": []
@@ -624,6 +556,374 @@
               "events": []
             }
           ]
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Move",
+          "comment2": ""
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ObjectTimer"
+              },
+              "parameters": [
+                "ResetButton",
+                "\"Move\"",
+                "0"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "OnlyOnceConditionForObject::OnlyOnceCondition::OnlyOnce"
+              },
+              "parameters": [
+                "ResetButton",
+                "OnlyOnceCondition",
+                "\"Left\"",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Arreter"
+              },
+              "parameters": [
+                "ResetButton"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "ResetButton",
+                "180",
+                "175",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ObjectTimer"
+              },
+              "parameters": [
+                "ResetButton",
+                "\"Move\"",
+                "4"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "OnlyOnceConditionForObject::OnlyOnceCondition::OnlyOnce"
+              },
+              "parameters": [
+                "ResetButton",
+                "OnlyOnceCondition",
+                "\"Up\"",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Arreter"
+              },
+              "parameters": [
+                "ResetButton"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "ResetButton",
+                "-90",
+                "250",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ObjectTimer"
+              },
+              "parameters": [
+                "ResetButton",
+                "\"Move\"",
+                "6"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "OnlyOnceConditionForObject::OnlyOnceCondition::OnlyOnce"
+              },
+              "parameters": [
+                "ResetButton",
+                "OnlyOnceCondition",
+                "\"Right\"",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Arreter"
+              },
+              "parameters": [
+                "ResetButton"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "ResetButton",
+                "0",
+                "175",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ObjectTimer"
+              },
+              "parameters": [
+                "ResetButton",
+                "\"Move\"",
+                "10"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "OnlyOnceConditionForObject::OnlyOnceCondition::OnlyOnce"
+              },
+              "parameters": [
+                "ResetButton",
+                "OnlyOnceCondition",
+                "\"Down\"",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Arreter"
+              },
+              "parameters": [
+                "ResetButton"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "ResetButton",
+                "90",
+                "250",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ObjectTimer"
+              },
+              "parameters": [
+                "ResetButton",
+                "\"Move\"",
+                "12"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "OnlyOnceConditionForObject::OnlyOnceCondition::OnlyOnce"
+              },
+              "parameters": [
+                "ResetButton",
+                "OnlyOnceCondition",
+                "\"Reset\"",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Arreter"
+              },
+              "parameters": [
+                "ResetButton"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "OnlyOnceConditionForObject::OnlyOnceCondition::Reset"
+              },
+              "parameters": [
+                "ResetButton",
+                "OnlyOnceCondition",
+                "\"Left\"",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "OnlyOnceConditionForObject::OnlyOnceCondition::Reset"
+              },
+              "parameters": [
+                "ResetButton",
+                "OnlyOnceCondition",
+                "\"Up\"",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "OnlyOnceConditionForObject::OnlyOnceCondition::Reset"
+              },
+              "parameters": [
+                "ResetButton",
+                "OnlyOnceCondition",
+                "\"Right\"",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "OnlyOnceConditionForObject::OnlyOnceCondition::Reset"
+              },
+              "parameters": [
+                "ResetButton",
+                "OnlyOnceCondition",
+                "\"Down\"",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "OnlyOnceConditionForObject::OnlyOnceCondition::Reset"
+              },
+              "parameters": [
+                "ResetButton",
+                "OnlyOnceCondition",
+                "\"Reset\"",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "ResetButton",
+                "\"Move\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
         }
       ],
       "layers": [
@@ -653,6 +953,10 @@
       "behaviorsSharedData": [
         {
           "name": "OnceBehavior",
+          "type": "OnlyOnceConditionForObject::OnlyOnceCondition"
+        },
+        {
+          "name": "OnlyOnceCondition",
           "type": "OnlyOnceConditionForObject::OnlyOnceCondition"
         }
       ]
