@@ -92,13 +92,7 @@
   },
   "objects": [],
   "objectsGroups": [],
-  "variables": [
-    {
-      "name": "真偽値",
-      "type": "boolean",
-      "value": false
-    }
-  ],
+  "variables": [],
   "layouts": [
     {
       "b": 209,
@@ -123,7 +117,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 1,
+        "zoomFactor": 0.5199999999999996,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -343,12 +337,7 @@
           "updateIfNotVisible": false,
           "variables": [],
           "effects": [],
-          "behaviors": [
-            {
-              "name": "OnlyOnceCondition",
-              "type": "OnlyOnceConditionForObject::OnlyOnceCondition"
-            }
-          ],
+          "behaviors": [],
           "animations": [
             {
               "name": "",
@@ -444,18 +433,7 @@
               "subInstructions": []
             }
           ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "ToggleGlobalVariableAsBoolean"
-              },
-              "parameters": [
-                "真偽値"
-              ],
-              "subInstructions": []
-            }
-          ],
+          "actions": [],
           "events": [
             {
               "disabled": false,
@@ -493,18 +471,6 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "DebuggerTools::ConsoleLog"
-                  },
-                  "parameters": [
-                    "\"First click!\"",
-                    "\"info\"",
-                    "\"MyMessage\""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
                     "value": "Create"
                   },
                   "parameters": [
@@ -513,6 +479,82 @@
                     "CheckRoundButton.CenterX()",
                     "CheckRoundButton.CenterY()",
                     "\"\""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "OnlyOnceConditionForObject::OnlyOnceCondition::Reset"
+                  },
+                  "parameters": [
+                    "CheckRoundButton",
+                    "OnceBehavior",
+                    "\"Left\"",
+                    "1"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "OnlyOnceConditionForObject::OnlyOnceCondition::Reset"
+                  },
+                  "parameters": [
+                    "CheckRoundButton",
+                    "OnceBehavior",
+                    "\"Up\"",
+                    "1"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "OnlyOnceConditionForObject::OnlyOnceCondition::Reset"
+                  },
+                  "parameters": [
+                    "CheckRoundButton",
+                    "OnceBehavior",
+                    "\"Right\"",
+                    "1"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "OnlyOnceConditionForObject::OnlyOnceCondition::Reset"
+                  },
+                  "parameters": [
+                    "CheckRoundButton",
+                    "OnceBehavior",
+                    "\"Down\"",
+                    "1"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "OnlyOnceConditionForObject::OnlyOnceCondition::Reset"
+                  },
+                  "parameters": [
+                    "CheckRoundButton",
+                    "OnceBehavior",
+                    "\"Reset\"",
+                    "1"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ResetObjectTimer"
+                  },
+                  "parameters": [
+                    "CheckRoundButton",
+                    "\"Move\""
                   ],
                   "subInstructions": []
                 }
@@ -569,7 +611,7 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": "Move",
+          "comment": "Animation",
           "comment2": ""
         },
         {
@@ -583,7 +625,7 @@
                 "value": "ObjectTimer"
               },
               "parameters": [
-                "ResetButton",
+                "CheckRoundButton",
                 "\"Move\"",
                 "0"
               ],
@@ -595,8 +637,8 @@
                 "value": "OnlyOnceConditionForObject::OnlyOnceCondition::OnlyOnce"
               },
               "parameters": [
-                "ResetButton",
-                "OnlyOnceCondition",
+                "CheckRoundButton",
+                "OnceBehavior",
                 "\"Left\"",
                 ""
               ],
@@ -610,7 +652,7 @@
                 "value": "Arreter"
               },
               "parameters": [
-                "ResetButton"
+                "CheckRoundButton"
               ],
               "subInstructions": []
             },
@@ -620,9 +662,9 @@
                 "value": "AddForceAL"
               },
               "parameters": [
-                "ResetButton",
+                "CheckRoundButton",
                 "180",
-                "175",
+                "17",
                 "1"
               ],
               "subInstructions": []
@@ -641,7 +683,7 @@
                 "value": "ObjectTimer"
               },
               "parameters": [
-                "ResetButton",
+                "CheckRoundButton",
                 "\"Move\"",
                 "4"
               ],
@@ -653,8 +695,8 @@
                 "value": "OnlyOnceConditionForObject::OnlyOnceCondition::OnlyOnce"
               },
               "parameters": [
-                "ResetButton",
-                "OnlyOnceCondition",
+                "CheckRoundButton",
+                "OnceBehavior",
                 "\"Up\"",
                 ""
               ],
@@ -668,7 +710,7 @@
                 "value": "Arreter"
               },
               "parameters": [
-                "ResetButton"
+                "CheckRoundButton"
               ],
               "subInstructions": []
             },
@@ -678,9 +720,9 @@
                 "value": "AddForceAL"
               },
               "parameters": [
-                "ResetButton",
+                "CheckRoundButton",
                 "-90",
-                "250",
+                "25",
                 "1"
               ],
               "subInstructions": []
@@ -699,7 +741,7 @@
                 "value": "ObjectTimer"
               },
               "parameters": [
-                "ResetButton",
+                "CheckRoundButton",
                 "\"Move\"",
                 "6"
               ],
@@ -711,8 +753,8 @@
                 "value": "OnlyOnceConditionForObject::OnlyOnceCondition::OnlyOnce"
               },
               "parameters": [
-                "ResetButton",
-                "OnlyOnceCondition",
+                "CheckRoundButton",
+                "OnceBehavior",
                 "\"Right\"",
                 ""
               ],
@@ -726,7 +768,7 @@
                 "value": "Arreter"
               },
               "parameters": [
-                "ResetButton"
+                "CheckRoundButton"
               ],
               "subInstructions": []
             },
@@ -736,9 +778,9 @@
                 "value": "AddForceAL"
               },
               "parameters": [
-                "ResetButton",
+                "CheckRoundButton",
                 "0",
-                "175",
+                "17",
                 "1"
               ],
               "subInstructions": []
@@ -757,7 +799,7 @@
                 "value": "ObjectTimer"
               },
               "parameters": [
-                "ResetButton",
+                "CheckRoundButton",
                 "\"Move\"",
                 "10"
               ],
@@ -769,8 +811,8 @@
                 "value": "OnlyOnceConditionForObject::OnlyOnceCondition::OnlyOnce"
               },
               "parameters": [
-                "ResetButton",
-                "OnlyOnceCondition",
+                "CheckRoundButton",
+                "OnceBehavior",
                 "\"Down\"",
                 ""
               ],
@@ -784,7 +826,7 @@
                 "value": "Arreter"
               },
               "parameters": [
-                "ResetButton"
+                "CheckRoundButton"
               ],
               "subInstructions": []
             },
@@ -794,9 +836,9 @@
                 "value": "AddForceAL"
               },
               "parameters": [
-                "ResetButton",
+                "CheckRoundButton",
                 "90",
-                "250",
+                "25",
                 "1"
               ],
               "subInstructions": []
@@ -815,7 +857,7 @@
                 "value": "ObjectTimer"
               },
               "parameters": [
-                "ResetButton",
+                "CheckRoundButton",
                 "\"Move\"",
                 "12"
               ],
@@ -827,8 +869,8 @@
                 "value": "OnlyOnceConditionForObject::OnlyOnceCondition::OnlyOnce"
               },
               "parameters": [
-                "ResetButton",
-                "OnlyOnceCondition",
+                "CheckRoundButton",
+                "OnceBehavior",
                 "\"Reset\"",
                 ""
               ],
@@ -842,7 +884,7 @@
                 "value": "Arreter"
               },
               "parameters": [
-                "ResetButton"
+                "CheckRoundButton"
               ],
               "subInstructions": []
             },
@@ -852,8 +894,8 @@
                 "value": "OnlyOnceConditionForObject::OnlyOnceCondition::Reset"
               },
               "parameters": [
-                "ResetButton",
-                "OnlyOnceCondition",
+                "CheckRoundButton",
+                "OnceBehavior",
                 "\"Left\"",
                 "1"
               ],
@@ -865,8 +907,8 @@
                 "value": "OnlyOnceConditionForObject::OnlyOnceCondition::Reset"
               },
               "parameters": [
-                "ResetButton",
-                "OnlyOnceCondition",
+                "CheckRoundButton",
+                "OnceBehavior",
                 "\"Up\"",
                 "1"
               ],
@@ -878,8 +920,8 @@
                 "value": "OnlyOnceConditionForObject::OnlyOnceCondition::Reset"
               },
               "parameters": [
-                "ResetButton",
-                "OnlyOnceCondition",
+                "CheckRoundButton",
+                "OnceBehavior",
                 "\"Right\"",
                 "1"
               ],
@@ -891,8 +933,8 @@
                 "value": "OnlyOnceConditionForObject::OnlyOnceCondition::Reset"
               },
               "parameters": [
-                "ResetButton",
-                "OnlyOnceCondition",
+                "CheckRoundButton",
+                "OnceBehavior",
                 "\"Down\"",
                 "1"
               ],
@@ -904,8 +946,8 @@
                 "value": "OnlyOnceConditionForObject::OnlyOnceCondition::Reset"
               },
               "parameters": [
-                "ResetButton",
-                "OnlyOnceCondition",
+                "CheckRoundButton",
+                "OnceBehavior",
                 "\"Reset\"",
                 "1"
               ],
@@ -917,7 +959,7 @@
                 "value": "ResetObjectTimer"
               },
               "parameters": [
-                "ResetButton",
+                "CheckRoundButton",
                 "\"Move\""
               ],
               "subInstructions": []
@@ -953,10 +995,6 @@
       "behaviorsSharedData": [
         {
           "name": "OnceBehavior",
-          "type": "OnlyOnceConditionForObject::OnlyOnceCondition"
-        },
-        {
-          "name": "OnlyOnceCondition",
           "type": "OnlyOnceConditionForObject::OnlyOnceCondition"
         }
       ]
