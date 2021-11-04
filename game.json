@@ -301,7 +301,7 @@
           "behaviors": [
             {
               "name": "OnceBehavior",
-              "type": "OnceExtension::OnceBehavior"
+              "type": "OnlyOnceConditionForObject::OnlyOnceCondition"
             }
           ],
           "animations": [
@@ -423,7 +423,7 @@
       ],
       "events": [
         {
-          "disabled": true,
+          "disabled": false,
           "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
@@ -441,7 +441,19 @@
             {
               "type": {
                 "inverted": false,
-                "value": "BuiltinCommonInstructions::Once"
+                "value": "OnlyOnceConditionForObject::LogMessageToConsole"
+              },
+              "parameters": [
+                "",
+                "\"Condition is True!\"",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Or"
               },
               "parameters": [],
               "subInstructions": []
@@ -449,13 +461,9 @@
             {
               "type": {
                 "inverted": false,
-                "value": "OnceExtension::LogMessageToConsole"
+                "value": "BuiltinCommonInstructions::Once"
               },
-              "parameters": [
-                "",
-                "\"Condition is True!\"",
-                ""
-              ],
+              "parameters": [],
               "subInstructions": []
             }
           ],
@@ -526,7 +534,7 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "OnceExtension::OnceBehavior::OnlyOnce"
+                    "value": "OnlyOnceConditionForObject::OnlyOnceCondition::OnlyOnce"
                   },
                   "parameters": [
                     "CheckRoundButton",
@@ -539,7 +547,7 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "OnceExtension::LogMessageToConsole"
+                    "value": "OnlyOnceConditionForObject::LogMessageToConsole"
                   },
                   "parameters": [
                     "",
@@ -602,7 +610,7 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "OnceExtension::OnceBehavior::Reset"
+                    "value": "OnlyOnceConditionForObject::OnlyOnceCondition::Reset"
                   },
                   "parameters": [
                     "CheckRoundButton",
@@ -645,7 +653,7 @@
       "behaviorsSharedData": [
         {
           "name": "OnceBehavior",
-          "type": "OnceExtension::OnceBehavior"
+          "type": "OnlyOnceConditionForObject::OnlyOnceCondition"
         }
       ]
     }
@@ -654,15 +662,15 @@
   "eventsFunctionsExtensions": [
     {
       "author": "",
-      "description": "",
+      "description": "Adding the \"Only Once Condition\" behavior to an object will add the \"Only Once\" condition to the object.\n\nThe condition will be identified by the event name and will be executed only once.",
       "extensionNamespace": "",
-      "fullName": "Once Extension",
-      "helpPath": "",
+      "fullName": "Only Once Condition for Object",
+      "helpPath": "https://github.com/PANDAKO-GitHub/OnceExtension",
       "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLXJlcGVhdC1vbmNlIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEzLDE1VjlIMTJMMTAsMTBWMTFIMTEuNVYxNU0xNywxN0g3VjE0TDMsMThMNywyMlYxOUgxOVYxM0gxN003LDdIMTdWMTBMMjEsNkwxNywyVjVINVYxMUg3VjdaIiAvPjwvc3ZnPg==",
-      "name": "OnceExtension",
+      "name": "OnlyOnceConditionForObject",
       "previewIconUrl": "https://resources.gdevelop-app.com/assets/Icons/repeat-once.svg",
-      "shortDescription": "",
-      "version": "0.0.1",
+      "shortDescription": "This behavior adds a \"only once\" condition to the object.",
+      "version": "0.1.0",
       "tags": [
         "once",
         "object",
@@ -730,13 +738,13 @@
       ],
       "eventsBasedBehaviors": [
         {
-          "description": "",
-          "fullName": "Once Behabior",
-          "name": "OnceBehavior",
+          "description": "Adds a condition to the object that will be executed only once.",
+          "fullName": "Only Once Condition",
+          "name": "OnlyOnceCondition",
           "objectType": "",
           "eventsFunctions": [
             {
-              "description": "",
+              "description": "The condition of this Event Name was checked for the first time.",
               "fullName": "Only once",
               "functionType": "Condition",
               "name": "OnlyOnce",
@@ -755,7 +763,7 @@
                       },
                       "parameters": [
                         "Object",
-                        "_OnceExtension",
+                        "__OnceExtension",
                         "GetArgumentAsString(\"EventName\")"
                       ],
                       "subInstructions": []
@@ -769,7 +777,7 @@
                       },
                       "parameters": [
                         "Object",
-                        "_OnceExtension[GetArgumentAsString(\"EventName\")]",
+                        "__OnceExtension[GetArgumentAsString(\"EventName\")]",
                         "False"
                       ],
                       "subInstructions": []
@@ -789,7 +797,7 @@
                       },
                       "parameters": [
                         "Object",
-                        "_OnceExtension[GetArgumentAsString(\"EventName\")]",
+                        "__OnceExtension[GetArgumentAsString(\"EventName\")]",
                         "True"
                       ],
                       "subInstructions": []
@@ -821,7 +829,7 @@
                       },
                       "parameters": [
                         "Object",
-                        "_OnceExtension[GetArgumentAsString(\"EventName\")]",
+                        "__OnceExtension[GetArgumentAsString(\"EventName\")]",
                         ""
                       ],
                       "subInstructions": []
@@ -835,7 +843,7 @@
                       },
                       "parameters": [
                         "Object",
-                        "_OnceExtension[GetArgumentAsString(\"EventName\")]",
+                        "__OnceExtension[GetArgumentAsString(\"EventName\")]",
                         "True"
                       ],
                       "subInstructions": []
@@ -872,7 +880,7 @@
                   "longDescription": "",
                   "name": "Behavior",
                   "optional": false,
-                  "supplementaryInformation": "OnceExtension::OnceBehavior",
+                  "supplementaryInformation": "OnlyOnceConditionForObject::OnlyOnceCondition",
                   "type": "behavior"
                 },
                 {
@@ -889,7 +897,7 @@
               "objectGroups": []
             },
             {
-              "description": "Reset Event.",
+              "description": "Reset the condition of the Event Name parameter.",
               "fullName": "Reset Event",
               "functionType": "Action",
               "name": "Reset",
@@ -908,7 +916,7 @@
                       },
                       "parameters": [
                         "Object",
-                        "_OnceExtension",
+                        "__OnceExtension",
                         "GetArgumentAsString(\"EventName\")"
                       ],
                       "subInstructions": []
@@ -922,7 +930,7 @@
                       },
                       "parameters": [
                         "Object",
-                        "_OnceExtension[GetArgumentAsString(\"EventName\")]",
+                        "__OnceExtension[GetArgumentAsString(\"EventName\")]",
                         "False"
                       ],
                       "subInstructions": []
@@ -943,7 +951,7 @@
                       },
                       "parameters": [
                         "Object",
-                        "_OnceExtension[GetArgumentAsString(\"EventName\")]",
+                        "__OnceExtension[GetArgumentAsString(\"EventName\")]",
                         "False"
                       ],
                       "subInstructions": []
@@ -970,7 +978,7 @@
                   "longDescription": "",
                   "name": "Behavior",
                   "optional": false,
-                  "supplementaryInformation": "OnceExtension::OnceBehavior",
+                  "supplementaryInformation": "OnlyOnceConditionForObject::OnlyOnceCondition",
                   "type": "behavior"
                 },
                 {
