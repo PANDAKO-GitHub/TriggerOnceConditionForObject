@@ -1033,7 +1033,7 @@
           "eventsFunctions": [
             {
               "description": "The condition name of this instance was checked for the first time.\nUnlike the \"Trigger once while true\" condition, this condition stays true until reset.",
-              "fullName": "Trigger once per object instance",
+              "fullName": "Only once per instance",
               "functionType": "Condition",
               "name": "OnlyOnce",
               "private": false,
