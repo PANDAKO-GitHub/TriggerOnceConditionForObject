@@ -1,4 +1,6 @@
 # "Trigger Once Condition For Object" GDevelop Extension
+This extension has been renamed. (Old: Only Once Condition For Object)  
+The new file name is "TriggerOnceConditionForObject0.0.0.json".
 ## Summary
 This extension is useful if you want to trigger once per instance.  
 This is simpler than creating your own instance variables.
@@ -16,6 +18,7 @@ This extension add:
 - **Trigger once per instance** - condition
 - **Reset all conditions** - action
 - **Reset condition** - action
+
 
 ![Example project scene](./images/condition.png)
 
