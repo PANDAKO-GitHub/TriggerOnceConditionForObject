@@ -1032,7 +1032,7 @@
           "objectType": "",
           "eventsFunctions": [
             {
-              "description": "The condition name of this instance was checked for the first time.\nUnlike the \"Trigger once while true\" condition, this condition stays true until reset.",
+              "description": "The condition name of this instance was checked for the first time.\nUnlike the \"Trigger once while true\" condition, this condition stays false until reset.",
               "fullName": "Only once per instance",
               "functionType": "Condition",
               "name": "OnlyOnce",
