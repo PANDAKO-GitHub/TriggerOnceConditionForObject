@@ -10,7 +10,7 @@ This is simpler than creating your own instance variables.
 - In the events add the **Trigger once per instance** condition to the instance.
 
 The condition will be identified by the **condition name** and will be executed only once until you reset if you want using it one more time.  
-Unlike the "Trigger once while true" condition, this condition stays false until reset.
+Unlike the "Trigger once while true" condition, this condition stays false until reset manually with the appropriate action.
 
 This extension add:
 
