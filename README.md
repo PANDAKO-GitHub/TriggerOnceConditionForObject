@@ -1,3 +1,5 @@
+**⚠️ This extension is no longer maintained, and its use is not recommended.**
+
 # "Trigger Once Condition For Object" GDevelop Extension
 This extension has been renamed. (Old: Only Once Condition For Object)  
 The new file name is "TriggerOnceConditionForObject0.0.0.json".
